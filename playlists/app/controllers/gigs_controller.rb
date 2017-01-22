@@ -6,14 +6,18 @@ class GigsController < ApplicationController
  end
 
  def create
-   gig = Gig.create(
-     {
-     location: params[:location],
-     date: params[:date],
-     playlist_id: params[:playlist_id]
-     })
+   gig = Gig.create( gig_params )
+   render json: gig, status: :created
+ end
 
+ def show
+   gig = Gig.find(params[:id])
    render :json => gig
+ end
+
+ private
+ def gig_params
+   params.require(:gig).permit([:location, :date])
  end
 
 end
