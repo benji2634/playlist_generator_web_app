@@ -1,19 +1,27 @@
 Rails.application.routes.draw do
 
-  get 'artists' => 'artists#index'
-  get 'artists/:id' => 'artists#show'
+  # get 'artists' => 'artists#index'
+  # get 'artists/:id' => 'artists#show'
 
-  get 'genres' => 'genres#index'
-  get 'genres/:id' => 'genres#show'
+  # get 'genres' => 'genres#index'
+  # get 'genres/:id' => 'genres#show'
 
-  get 'playlists' => 'playlists#index'
-  get 'playlists/:id' => 'playlists#show'
+  # get 'playlists' => 'playlists#index'
+  # get 'playlists/:id' => 'playlists#show'
 
-  get 'songs' => 'songs#index'
-  get 'songs/:id' => 'songs#show'
+  # get 'songs' => 'songs#index'
+  # get 'songs/:id' => 'songs#show'
 
-  get 'gigs' => 'gigs#index'
-  get 'gigs/:id' => 'gigs#show'
+  # get 'gigs' => 'gigs#index'
+  # get 'gigs/:id' => 'gigs#show'
+
+  
+  resources :songs
+  resources :artists
+  resources :genres
+  resources :playlists do
+    resources :gigs
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
