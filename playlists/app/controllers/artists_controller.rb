@@ -10,20 +10,20 @@ class ArtistsController < ApplicationController
     render :json => artist
   end
 
-  def new
-    artist = Artist.new
-    render json: artist
-  end
+  # def new
+  #   artist = Artist.new
+  #   render json: artist
+  # end
 
   def create
     artist = Artist.create( artist_params )
     render json: artist, status: :created
   end
 
-  def edit
-    artist = Artist.find(params[:id])
-    render json: artist
-  end
+  # def edit
+  #   artist = Artist.find(params[:id])
+  #   render json: artist
+  # end
 
   def update
     artist = Artist.update(artist_params)

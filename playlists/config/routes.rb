@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   # get 'gigs' => 'gigs#index'
   # get 'gigs/:id' => 'gigs#show'
 
+  scope path: "api" do
+    resources :songs, defaults: {format: :json}
+  end
   
   resources :songs
   resources :artists
