@@ -28,11 +28,65 @@ playlist1 = Playlist.create({name: "Wedding"})
 
 Song.delete_all
 
-song1 = Song.create({title: "Wagon Wheel", lyrics_url: "https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=wagon%20wheel%20lyrics", artist_id: artist1.id, genre_id: genre1.id, playlist_id: playlist1.id})
-song2 = Song.create({title: "Little Lion Man", lyrics_url: "https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=little%20lion%20man%20lyrics", artist_id: artist2.id, genre_id: genre2.id, playlist_id: playlist1.id})
-song3 = Song.create({title: "Thinking Out Loud", lyrics_url: "https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=thinking+out+loud+lyrics", artist_id: artist3.id, genre_id: genre4.id, playlist_id: playlist1.id})
-song4 = Song.create({title: "Wake Me Up", lyrics_url: "https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=wake%20me%20up%20lyrics", artist_id: artist4.id, genre_id: genre3.id, playlist_id: playlist1.id})
-song5 = Song.create({title: "Can\'t Stop The Feeling", lyrics_url: "https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=can+stop+the+feeling+lyrics", artist_id: artist5.id, genre_id: genre5.id, playlist_id: playlist1.id})
+song1 = Song.create(
+  {
+    title: "Wagon Wheel", 
+    lyrics_url: "https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=wagon%20wheel%20lyrics", 
+    artist_id: artist1.id, 
+    genre_id: genre1.id, 
+    playlist_id: playlist1.id,
+    image: "placeholder.jpg",
+    songid: "1"
+    }
+)
+
+song2 = Song.create(
+  {
+    title: "Little Lion Man", 
+    lyrics_url: "https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=little%20lion%20man%20lyrics", 
+    artist_id: artist2.id, 
+    genre_id: genre2.id, 
+    playlist_id: playlist1.id,
+    image: "placeholder.jpg",
+    songid: "2"
+  }
+)
+
+song3 = Song.create(
+  {
+    title: "Thinking Out Loud", 
+    lyrics_url: "https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=thinking+out+loud+lyrics", 
+    artist_id: artist3.id, 
+    genre_id: genre4.id, 
+    playlist_id: playlist1.id,
+    image: "placeholder.jpg",
+    songid: "3"
+  }
+)
+
+song4 = Song.create(
+  {
+    title: "Wake Me Up", 
+    lyrics_url: "https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=wake%20me%20up%20lyrics", 
+    artist_id: artist4.id, 
+    genre_id: genre3.id, 
+    playlist_id: playlist1.id,
+    image: "placeholder.jpg",
+    songid: "4"
+  }
+)
+
+song5 = Song.create(
+  {
+    title: "Can\'t Stop The Feeling", 
+    lyrics_url: "https://www.google.co.uk/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=can+stop+the+feeling+lyrics", 
+    artist_id: artist5.id, 
+    genre_id: genre5.id, 
+    playlist_id: playlist1.id,
+    image: "placeholder.jpg",
+    songid: "5"
+  }
+)
 
 Gig.delete_all
 
