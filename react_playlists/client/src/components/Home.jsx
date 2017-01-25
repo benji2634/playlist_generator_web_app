@@ -3,8 +3,10 @@ const { Link } = require('react-router')
 
 const Home = () => (
   <div className="home">
-    <h1 className='title'>The Playlist</h1>
-    <Link to='/songs'>Songs</Link>
+    <nav>
+      <Link to='/' className='title'>The Playlist</Link>
+      <Link to='/songs' className='title'>Songs</Link>
+    </nav>
   </div>
 )
 

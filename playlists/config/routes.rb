@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   scope path: "api" do
     resources :songs, defaults: {format: :json}
     resources :artists, defaults: {format: :json}
+    resources :playlists, defaults: {format: :json}
   end
   
   resources :songs

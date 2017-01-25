@@ -63,7 +63,29 @@ genre5 = Genre.create({name: "Pop"})
 
 Playlist.delete_all
 
-playlist1 = Playlist.create({name: "Wedding"})
+playlist1 = Playlist.create(
+    {
+        name: "Wedding",
+        image: "setlist.png",
+        playlistid: "1"
+    }
+)
+
+playlist2 = Playlist.create(
+    {
+        name: "Pub",
+        image: "setlist.png",
+        playlistid: "2"
+    }
+)
+
+playlist3 = Playlist.create(
+    {
+        name: "Party",
+        image: "setlist.png",
+        playlistid: "3"
+    }
+)
 
 Song.delete_all
 

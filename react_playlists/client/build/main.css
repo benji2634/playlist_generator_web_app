@@ -25,7 +25,6 @@ h1, h2, h4 {
   text-align: center;
   background-image: url(images/background.jpg);
   background-size: cover;
-
 }
 
 .title{
@@ -38,9 +37,14 @@ h1, h2, h4 {
 }
 
 .home{
-  width: 50%;
+  width: 100%;
   min-width: 300px;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  background-image: url(images/logo.jpg);
+  background-size: cover;
 }
 
 .songs-link, button{
@@ -107,13 +111,13 @@ button:hover{
   width: 90%;
 }
 
-.songs-container{
+.list-container{
   display: flex;
   justify-content: center; 
   flex-wrap: wrap;
 }
 
-.songs-container > *{
+.list-container > *{
   min-width: 100px;
   min-height: 100px;
 }

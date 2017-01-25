@@ -6,6 +6,7 @@ const {Router, Route, IndexRoute, hashHistory} = ReactRouter
 const Home = require('./components/Home.jsx')
 const SongList = require('./components/SongList.jsx')
 const ArtistList = require('./components/ArtistList.jsx')
+const SetList = require('./components/SetList.jsx')
 const About = require('./components/About.jsx')
 
 const App = React.createClass({
@@ -16,6 +17,7 @@ const App = React.createClass({
           <IndexRoute component={Home} />
           <Route path='/songs' component={SongList} />
           <Route path='/artists' component={ArtistList} />
+          <Route path='/playlists' component={SetList} />
           <Route path='/about' component={About} />
         </Route>
       </Router>

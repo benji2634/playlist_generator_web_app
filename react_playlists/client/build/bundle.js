@@ -56,9 +56,10 @@
 	    hashHistory = ReactRouter.hashHistory;
 	
 	var Home = __webpack_require__(216);
-	var SongList = __webpack_require__(220);
-	var ArtistList = __webpack_require__(221);
-	var About = __webpack_require__(219);
+	var SongList = __webpack_require__(217);
+	var ArtistList = __webpack_require__(219);
+	var SetList = __webpack_require__(221);
+	var About = __webpack_require__(223);
 	
 	var App = React.createClass({
 	  displayName: 'App',
@@ -72,6 +73,7 @@
 	        React.createElement(IndexRoute, { component: Home }),
 	        React.createElement(Route, { path: '/songs', component: SongList }),
 	        React.createElement(Route, { path: '/artists', component: ArtistList }),
+	        React.createElement(Route, { path: '/playlists', component: SetList }),
 	        React.createElement(Route, { path: '/about', component: About })
 	      )
 	    );
@@ -24945,14 +24947,18 @@
 	    'div',
 	    { className: 'home' },
 	    React.createElement(
-	      'h1',
-	      { className: 'title' },
-	      'The Playlist'
-	    ),
-	    React.createElement(
-	      Link,
-	      { to: '/songs' },
-	      'Songs'
+	      'nav',
+	      null,
+	      React.createElement(
+	        Link,
+	        { to: '/', className: 'title' },
+	        'The Playlist'
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: '/songs', className: 'title' },
+	        'Songs'
+	      )
 	    )
 	  );
 	};
@@ -24960,104 +24966,7 @@
 	module.exports = Home;
 
 /***/ },
-/* 217 */,
-/* 218 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var React = __webpack_require__(1);
-	
-	var Song = function Song(props) {
-	  return React.createElement(
-	    'div',
-	    { className: 'song' },
-	    React.createElement('img', { src: 'images/' + props.image, className: 'song-image' }),
-	    React.createElement(
-	      'div',
-	      { className: 'song-details' },
-	      React.createElement(
-	        'h3',
-	        { className: 'song-title' },
-	        props.title
-	      ),
-	      React.createElement(
-	        'a',
-	        { className: 'song-lyrics', href: props.lyrics_url },
-	        'Lyrics'
-	      )
-	    )
-	  );
-	};
-	
-	var string = React.PropTypes.string;
-	
-	
-	Song.propTypes = {
-	  title: string.isRequired,
-	  image: string.isRequired,
-	  lyrics_url: string.isRequired
-	};
-	
-	module.exports = Song;
-
-/***/ },
-/* 219 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var React = __webpack_require__(1);
-	
-	var About = function (_React$Component) {
-	  _inherits(About, _React$Component);
-	
-	  function About() {
-	    _classCallCheck(this, About);
-	
-	    return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).apply(this, arguments));
-	  }
-	
-	  _createClass(About, [{
-	    key: "render",
-	    value: function render() {
-	      return React.createElement(
-	        "div",
-	        { className: "about" },
-	        React.createElement(
-	          "h4",
-	          null,
-	          " About "
-	        ),
-	        React.createElement(
-	          "p",
-	          null,
-	          " The Playlist are three great players, playing great songs! Fronted by David McKendrick, these guys have been taking the industry by storm with the Indie, pop, rock medleys and high energy sets. Don't be fooled, even though there is only three of them, they sound massive and they're accompanied on a few of the big floor fillers with backing tracks. You really need to see these guys live and meet them to get what they do. So get your tickets or book your space to their next live gig!  "
-	        ),
-	        React.createElement(
-	          "div",
-	          null,
-	          React.createElement("iframe", { className: "video", src: "https://www.youtube.com/embed/dWKZd7LvBIE?controls=1" })
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return About;
-	}(React.Component);
-	
-	module.exports = About;
-
-/***/ },
-/* 220 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25118,7 +25027,7 @@
 	      ),
 	      React.createElement(
 	        'div',
-	        { className: 'songs-container' },
+	        { className: 'list-container' },
 	        this.state.songs.filter(function (song) {
 	          return ('' + song.title).toUpperCase().indexOf(_this2.state.searchQuery.toUpperCase()) >= 0;
 	        }).map(function (song) {
@@ -25132,7 +25041,48 @@
 	module.exports = SongList;
 
 /***/ },
-/* 221 */
+/* 218 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	
+	var Song = function Song(props) {
+	  return React.createElement(
+	    'div',
+	    { className: 'song' },
+	    React.createElement('img', { src: 'images/' + props.image, className: 'song-image' }),
+	    React.createElement(
+	      'div',
+	      { className: 'song-details' },
+	      React.createElement(
+	        'h3',
+	        { className: 'song-title' },
+	        props.title
+	      ),
+	      React.createElement(
+	        'a',
+	        { className: 'song-lyrics', href: props.lyrics_url },
+	        'Lyrics'
+	      )
+	    )
+	  );
+	};
+	
+	var string = React.PropTypes.string;
+	
+	
+	Song.propTypes = {
+	  title: string.isRequired,
+	  image: string.isRequired,
+	  lyrics_url: string.isRequired
+	};
+	
+	module.exports = Song;
+
+/***/ },
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25144,7 +25094,7 @@
 	var Link = Router.Link,
 	    browserHistory = Router.browserHistory;
 	
-	var Artist = __webpack_require__(222);
+	var Artist = __webpack_require__(220);
 	
 	var ArtistList = React.createClass({
 	  displayName: 'ArtistList',
@@ -25193,7 +25143,7 @@
 	      ),
 	      React.createElement(
 	        'div',
-	        { className: 'songs-container' },
+	        { className: 'list-container' },
 	        this.state.artists.filter(function (artist) {
 	          return ('' + artist.name).toUpperCase().indexOf(_this2.state.searchQuery.toUpperCase()) >= 0;
 	        }).map(function (artist) {
@@ -25207,7 +25157,7 @@
 	module.exports = ArtistList;
 
 /***/ },
-/* 222 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25248,6 +25198,171 @@
 	};
 	
 	module.exports = Artist;
+
+/***/ },
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var React = __webpack_require__(1);
+	var Router = __webpack_require__(160);
+	var Link = Router.Link,
+	    browserHistory = Router.browserHistory;
+	
+	var SongSet = __webpack_require__(222);
+	
+	var SetList = React.createClass({
+	  displayName: 'SetList',
+	  getInitialState: function getInitialState() {
+	    return { searchQuery: '', sets: [] };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var _this = this;
+	
+	    var url = 'http://localhost:5000/api/playlists';
+	    var request = new XMLHttpRequest();
+	    request.open('GET', url);
+	
+	    request.setRequestHeader('Content-Type', "application/json");
+	    request.withCredentials = true;
+	
+	    request.onload = function () {
+	      if (request.status === 200) {
+	        console.log("request: ", request.responseText);
+	        var data = JSON.parse(request.responseText);
+	        _this.setState({ sets: data });
+	      } else {
+	        browserHistory.goBack();
+	      }
+	    };
+	    request.send(null);
+	  },
+	  doSearch: function doSearch(event) {
+	    this.setState({ searchQuery: event.target.value });
+	  },
+	  render: function render() {
+	    var _this2 = this;
+	
+	    return React.createElement(
+	      'div',
+	      { className: 'list' },
+	      React.createElement(
+	        'nav',
+	        null,
+	        React.createElement(
+	          Link,
+	          { to: '/', className: 'title' },
+	          'The Playlist'
+	        ),
+	        React.createElement('input', { className: 'search-box', type: 'text', placeholder: 'Search...', value: this.state.searchQuery, onChange: this.doSearch })
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'list-container' },
+	        this.state.sets.filter(function (set) {
+	          return ('' + set.name).toUpperCase().indexOf(_this2.state.searchQuery.toUpperCase()) >= 0;
+	        }).map(function (set) {
+	          return React.createElement(SongSet, _extends({}, set, { key: set.playlistid }));
+	        })
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = SetList;
+
+/***/ },
+/* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	
+	var SongSet = function SongSet(props) {
+	  return React.createElement(
+	    'div',
+	    { className: 'song' },
+	    React.createElement('img', { src: 'images/' + props.image, className: 'song-image' }),
+	    React.createElement(
+	      'div',
+	      { className: 'song-details' },
+	      React.createElement(
+	        'h3',
+	        { className: 'song-name' },
+	        props.name
+	      )
+	    )
+	  );
+	};
+	
+	var string = React.PropTypes.string;
+	
+	
+	SongSet.propTypes = {
+	  name: string.isRequired,
+	  image: string.isRequired
+	};
+	
+	module.exports = SongSet;
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var React = __webpack_require__(1);
+	
+	var About = function (_React$Component) {
+	  _inherits(About, _React$Component);
+	
+	  function About() {
+	    _classCallCheck(this, About);
+	
+	    return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).apply(this, arguments));
+	  }
+	
+	  _createClass(About, [{
+	    key: "render",
+	    value: function render() {
+	      return React.createElement(
+	        "div",
+	        { className: "about" },
+	        React.createElement(
+	          "h4",
+	          null,
+	          " About "
+	        ),
+	        React.createElement(
+	          "p",
+	          null,
+	          " The Playlist are three great players, playing great songs! Fronted by David McKendrick, these guys have been taking the industry by storm with the Indie, pop, rock medleys and high energy sets. Don't be fooled, even though there is only three of them, they sound massive and they're accompanied on a few of the big floor fillers with backing tracks. You really need to see these guys live and meet them to get what they do. So get your tickets or book your space to their next live gig!  "
+	        ),
+	        React.createElement(
+	          "div",
+	          null,
+	          React.createElement("iframe", { className: "video", src: "https://www.youtube.com/embed/dWKZd7LvBIE?controls=1" })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return About;
+	}(React.Component);
+	
+	module.exports = About;
 
 /***/ }
 /******/ ]);

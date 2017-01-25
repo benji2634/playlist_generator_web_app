@@ -41,7 +41,7 @@ const SongList = React.createClass({
           <input className='search-box' type='text' placeholder='Search...' value={this.state.searchQuery} onChange={this.doSearch} />
         </nav>
 
-        <div className='songs-container'>
+        <div className='list-container'>
           {
             this.state.songs.filter((song) => `${song.title}`.toUpperCase().indexOf(this.state.searchQuery.toUpperCase()) >= 0)
              .map((song) => (

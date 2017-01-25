@@ -1,16 +1,16 @@
 const React = require('react')
 const Router = require('react-router')
 const { Link, browserHistory } = Router
-const Artist = require('./Artist')
+const SongSet = require('./SongSet')
 
-const ArtistList = React.createClass({
+const SetList = React.createClass({
 
   getInitialState(){
-    return { searchQuery: '', artists: [] }
+    return { searchQuery: '', sets: [] }
   },
 
   componentDidMount(){
-    var url = 'http://localhost:5000/api/artists'
+    var url = 'http://localhost:5000/api/playlists'
     var request = new XMLHttpRequest()
     request.open('GET', url)
 
@@ -21,7 +21,7 @@ const ArtistList = React.createClass({
        if(request.status === 200){
         console.log("request: ", request.responseText)
         var data = JSON.parse(request.responseText)
-        this.setState( { artists: data } )
+        this.setState( { sets: data } )
        } else{
         browserHistory.goBack()
        }
@@ -43,9 +43,9 @@ const ArtistList = React.createClass({
 
         <div className='list-container'>
           {
-            this.state.artists.filter((artist) => `${artist.name}`.toUpperCase().indexOf(this.state.searchQuery.toUpperCase()) >= 0)
-             .map((artist) => (
-              <Artist { ...artist } key={artist.artistid}/>
+            this.state.sets.filter((set) => `${set.name}`.toUpperCase().indexOf(this.state.searchQuery.toUpperCase()) >= 0)
+             .map((set) => (
+              <SongSet { ...set } key={set.playlistid}/>
             ))
 
           }
@@ -57,4 +57,4 @@ const ArtistList = React.createClass({
 
 })
 
-module.exports = ArtistList
+module.exports = SetList
