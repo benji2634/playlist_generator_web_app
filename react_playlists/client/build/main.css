@@ -7,6 +7,15 @@ h1, h2, h4 {
   color: white;
 }
 
+.about {
+  background: rgba(0, 0, 0, .8);
+  color: #eee;
+  margin: 10px;
+  padding: 10px;
+  width: 470px;
+  text-align: justify;
+}
+
 .container{  
   width: 100%;
   height: 100vh;
@@ -14,7 +23,7 @@ h1, h2, h4 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-image: url(images/setlist.png);
+  background-image: url(images/background.jpg);
   background-size: cover;
 
 }
@@ -22,7 +31,7 @@ h1, h2, h4 {
 .title{
   text-transform: uppercase;
   font-family: Impact, Charcoal, sans-serif;
-  color: crimson;
+  color: black;
   font-size: 60px;
   -webkit-text-stroke: 2px black;
   text-decoration: none;
@@ -45,7 +54,7 @@ h1, h2, h4 {
   border-radius: 5px;
 }
 
-.playlist{
+.list{
   width: 100%;
   height: 100vh;
 }
@@ -79,11 +88,26 @@ button:hover{
   cursor: pointer;
 }
 
+.video {
+  width: 50%;
+  min-width: 420px;
+  height: 315px;
+  background: rgba(0, 0, 0, .8);
+  color: #eee;
+  margin: 10px;
+  padding: 10px;
+  justify-content: center;
+}
+
 .song-image{
   width: 90%;
 }
 
-.shows-container{
+.artist-image{
+  width: 90%;
+}
+
+.songs-container{
   display: flex;
   justify-content: center; 
   flex-wrap: wrap;
@@ -102,11 +126,30 @@ button:hover{
   width: 350px;
 }
 
+.artist {
+  background: rgba(0, 0, 0, .8);
+  color: #eee;
+  margin: 10px;
+  padding: 10px;
+  width: 350px;
+}
+
 .song-title{
+  margin: 0;
+}
+
+.artist-name {
   margin: 0;
 }
 
 .song-lyrics{
   font-size: 10px;
   margin: 0;
+  color: #eee;
+}
+
+.artist-website {
+  font-size: 10px;
+  margin: 0;
+  color: #eee;
 }

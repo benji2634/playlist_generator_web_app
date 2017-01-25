@@ -1,14 +1,11 @@
-import React from 'react';
+const React = require('react')
+const { Link } = require('react-router')
 
-class Home extends React.Component{
-  render(){
-    return(
-      <div>
-        <h4> Home </h4>
-        <p> Home Page </p>
-      </div>
-    )
-  }
-}
+const Home = () => (
+  <div className="home">
+    <h1 className='title'>The Playlist</h1>
+    <Link to='/songs'>Songs</Link>
+  </div>
+)
 
-module.exports = Home;
+module.exports = Home

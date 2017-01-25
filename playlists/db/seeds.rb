@@ -8,11 +8,50 @@
 
 Artist.delete_all
 
-artist1 = Artist.create({name: "Darius Rucker", website: "http://www.dariusrucker.com/welcome"})
-artist2 = Artist.create({name: "Mumford & Sons", website: "http://www.mumfordandsons.com/"})
-artist3 = Artist.create({name: "Ed Sheeran", website: "http://www.edsheeran.com/"})
-artist4 = Artist.create({name: "Avicii", website: "http://www.avicii.com/"})
-artist5 = Artist.create({name: "Justin Timberlake", website: "http://justintimberlake.com/"})
+artist1 = Artist.create(
+    {
+        name: "Darius Rucker", 
+        website: "http://www.dariusrucker.com/welcome",
+        image: "logo.jpg",
+        artistid: "1"
+    }
+)
+
+artist2 = Artist.create(
+    {
+        name: "Mumford & Sons", 
+        website: "http://www.mumfordandsons.com/",
+        image: "logo.jpg",
+        artistid: "2"
+    }
+)
+
+artist3 = Artist.create(
+    {
+        name: "Ed Sheeran", 
+        website: "http://www.edsheeran.com/",
+        image: "logo.jpg",
+        artistid: "3"
+    }
+)
+
+artist4 = Artist.create(
+    {
+        name: "Avicii", 
+        website: "http://www.avicii.com/",
+        image: "logo.jpg",
+        artistid: "4"
+    }
+)
+
+artist5 = Artist.create(
+    {
+        name: "Justin Timberlake", 
+        website: "http://justintimberlake.com/",
+        image: "logo.jpg",
+        artistid: "5"
+    }
+)
 
 Genre.delete_all
 
@@ -35,7 +74,7 @@ song1 = Song.create(
     artist_id: artist1.id, 
     genre_id: genre1.id, 
     playlist_id: playlist1.id,
-    image: "placeholder.jpg",
+    image: "logo.jpg",
     songid: "1"
     }
 )
@@ -47,7 +86,7 @@ song2 = Song.create(
     artist_id: artist2.id, 
     genre_id: genre2.id, 
     playlist_id: playlist1.id,
-    image: "placeholder.jpg",
+    image: "logo.jpg",
     songid: "2"
   }
 )
@@ -59,7 +98,7 @@ song3 = Song.create(
     artist_id: artist3.id, 
     genre_id: genre4.id, 
     playlist_id: playlist1.id,
-    image: "placeholder.jpg",
+    image: "logo.jpg",
     songid: "3"
   }
 )
@@ -71,7 +110,7 @@ song4 = Song.create(
     artist_id: artist4.id, 
     genre_id: genre3.id, 
     playlist_id: playlist1.id,
-    image: "placeholder.jpg",
+    image: "logo.jpg",
     songid: "4"
   }
 )
@@ -83,7 +122,7 @@ song5 = Song.create(
     artist_id: artist5.id, 
     genre_id: genre5.id, 
     playlist_id: playlist1.id,
-    image: "placeholder.jpg",
+    image: "logo.jpg",
     songid: "5"
   }
 )

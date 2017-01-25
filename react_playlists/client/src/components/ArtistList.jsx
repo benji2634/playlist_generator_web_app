@@ -1,16 +1,16 @@
 const React = require('react')
 const Router = require('react-router')
 const { Link, browserHistory } = Router
-const Song = require('./Song')
+const Artist = require('./Artist')
 
-const Playlist = React.createClass({
+const ArtistList = React.createClass({
 
   getInitialState(){
-    return { searchQuery: '', songs: [] }
+    return { searchQuery: '', artists: [] }
   },
 
   componentDidMount(){
-    var url = 'http://localhost:5000/api/songs'
+    var url = 'http://localhost:5000/api/artists'
     var request = new XMLHttpRequest()
     request.open('GET', url)
 
@@ -21,7 +21,7 @@ const Playlist = React.createClass({
        if(request.status === 200){
         console.log("request: ", request.responseText)
         var data = JSON.parse(request.responseText)
-        this.setState( { songs: data } )
+        this.setState( { artists: data } )
        } else{
         browserHistory.goBack()
        }
@@ -35,7 +35,7 @@ const Playlist = React.createClass({
 
   render(){
     return(
-      <div className="playlist">
+      <div className="list">
         <nav>
           <Link to='/' className='title'>The Playlist</Link>
           <input className='search-box' type='text' placeholder='Search...' value={this.state.searchQuery} onChange={this.doSearch} />
@@ -43,9 +43,9 @@ const Playlist = React.createClass({
 
         <div className='songs-container'>
           {
-            this.state.songs.filter((song) => `${song.title}`.toUpperCase().indexOf(this.state.searchQuery.toUpperCase()) >= 0)
-             .map((show) => (
-              <Song { ...song } key={song.songid}/>
+            this.state.artists.filter((artist) => `${artist.name}`.toUpperCase().indexOf(this.state.searchQuery.toUpperCase()) >= 0)
+             .map((artist) => (
+              <Artist { ...artist } key={artist.artistid}/>
             ))
 
           }
@@ -57,4 +57,4 @@ const Playlist = React.createClass({
 
 })
 
-module.exports = Playlist
+module.exports = ArtistList
