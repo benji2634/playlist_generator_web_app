@@ -19,15 +19,15 @@ Rails.application.routes.draw do
     resources :songs, defaults: {format: :json}
     resources :artists, defaults: {format: :json}
     resources :playlists, defaults: {format: :json}
+    resources :gigs, defaults: {format: :json}
   end
   
   resources :songs
   resources :artists
   resources :genres
   resources :about
-  resources :playlists do
-    resources :gigs
-  end
+  resources :playlists
+  resources :gigs
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -7,6 +7,7 @@ const Home = require('./components/Home.jsx')
 const SongList = require('./components/SongList.jsx')
 const ArtistList = require('./components/ArtistList.jsx')
 const SetList = require('./components/SetList.jsx')
+const SetListGenerator = require('./components/SetListGenerator.jsx')
 const About = require('./components/About.jsx')
 
 const App = React.createClass({
@@ -19,6 +20,7 @@ const App = React.createClass({
           <Route path='/artists' component={ArtistList} />
           <Route path='/playlists' component={SetList} />
           <Route path='/about' component={About} />
+          <Route path='/gigs' component={SetListGenerator} />
         </Route>
       </Router>
     )

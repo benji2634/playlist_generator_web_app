@@ -59,6 +59,7 @@
 	var SongList = __webpack_require__(217);
 	var ArtistList = __webpack_require__(219);
 	var SetList = __webpack_require__(221);
+	var SetListGenerator = __webpack_require__(224);
 	var About = __webpack_require__(223);
 	
 	var App = React.createClass({
@@ -74,7 +75,8 @@
 	        React.createElement(Route, { path: '/songs', component: SongList }),
 	        React.createElement(Route, { path: '/artists', component: ArtistList }),
 	        React.createElement(Route, { path: '/playlists', component: SetList }),
-	        React.createElement(Route, { path: '/about', component: About })
+	        React.createElement(Route, { path: '/about', component: About }),
+	        React.createElement(Route, { path: '/gigs', component: SetListGenerator })
 	      )
 	    );
 	  }
@@ -25402,6 +25404,85 @@
 	}(React.Component);
 	
 	module.exports = About;
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var React = __webpack_require__(1);
+	var Router = __webpack_require__(160);
+	var Link = Router.Link,
+	    browserHistory = Router.browserHistory;
+	
+	var Song = __webpack_require__(218);
+	
+	function shuffleArray(array) {
+	  var i = array.length - 1;
+	  for (; i > 0; i--) {
+	    var j = Math.floor(Math.random() * (i + 1));
+	    var temp = array[i];
+	    array[i] = array[j];
+	    array[j] = temp;
+	  }
+	  return array;
+	}
+	
+	var SetListGenerator = React.createClass({
+	  displayName: 'SetListGenerator',
+	  getInitialState: function getInitialState() {
+	    return { searchQuery: '', songs: [] };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var _this = this;
+	
+	    var url = 'http://localhost:5000/api/songs';
+	    var request = new XMLHttpRequest();
+	    request.open('GET', url);
+	
+	    request.setRequestHeader('Content-Type', "application/json");
+	    request.withCredentials = true;
+	
+	    request.onload = function () {
+	      if (request.status === 200) {
+	        console.log("request: ", request.responseText);
+	        var data = JSON.parse(request.responseText);
+	        _this.setState({ songs: data });
+	      } else {
+	        browserHistory.goBack();
+	      }
+	    };
+	    request.send(null);
+	  },
+	  render: function render() {
+	    var shuffledSongs = shuffleArray(this.state.songs);
+	    return React.createElement(
+	      'div',
+	      { className: 'list' },
+	      React.createElement(
+	        'nav',
+	        null,
+	        React.createElement(
+	          Link,
+	          { to: '/', className: 'title' },
+	          'The Playlist'
+	        )
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'list-container' },
+	        shuffledSongs.map(function (song) {
+	          return React.createElement(Song, _extends({}, song, { key: song.songid }));
+	        })
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = SetListGenerator;
 
 /***/ }
 /******/ ]);
