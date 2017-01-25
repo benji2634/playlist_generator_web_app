@@ -24945,21 +24945,48 @@
 	var Home = function Home() {
 	  return React.createElement(
 	    'div',
-	    { className: 'home' },
+	    { className: 'list' },
 	    React.createElement(
 	      'nav',
 	      null,
 	      React.createElement(
-	        Link,
-	        { to: '/', className: 'title' },
-	        'The Playlist'
+	        'li',
+	        null,
+	        React.createElement(
+	          Link,
+	          { to: '/about', className: 'title' },
+	          'About'
+	        )
 	      ),
 	      React.createElement(
-	        Link,
-	        { to: '/songs', className: 'title' },
-	        'Songs'
+	        'li',
+	        null,
+	        React.createElement(
+	          Link,
+	          { to: '/playlists', className: 'title' },
+	          'Playlists'
+	        )
+	      ),
+	      React.createElement(
+	        'li',
+	        null,
+	        React.createElement(
+	          Link,
+	          { to: '/songs', className: 'title' },
+	          'Songs'
+	        )
+	      ),
+	      React.createElement(
+	        'li',
+	        null,
+	        React.createElement(
+	          Link,
+	          { to: '/artists', className: 'title' },
+	          'Artists'
+	        )
 	      )
-	    )
+	    ),
+	    React.createElement('div', { className: 'home' })
 	  );
 	};
 	
@@ -25313,7 +25340,7 @@
 /* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
@@ -25325,6 +25352,9 @@
 	
 	var React = __webpack_require__(1);
 	
+	var _require = __webpack_require__(160),
+	    Link = _require.Link;
+	
 	var About = function (_React$Component) {
 	  _inherits(About, _React$Component);
 	
@@ -25335,25 +25365,34 @@
 	  }
 	
 	  _createClass(About, [{
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
 	      return React.createElement(
-	        "div",
-	        { className: "about" },
+	        'div',
+	        { className: 'about' },
 	        React.createElement(
-	          "h4",
+	          'nav',
 	          null,
-	          " About "
+	          React.createElement(
+	            Link,
+	            { to: '/', className: 'title' },
+	            'The Playlist'
+	          )
 	        ),
 	        React.createElement(
-	          "p",
+	          'h4',
 	          null,
-	          " The Playlist are three great players, playing great songs! Fronted by David McKendrick, these guys have been taking the industry by storm with the Indie, pop, rock medleys and high energy sets. Don't be fooled, even though there is only three of them, they sound massive and they're accompanied on a few of the big floor fillers with backing tracks. You really need to see these guys live and meet them to get what they do. So get your tickets or book your space to their next live gig!  "
+	          ' About '
 	        ),
 	        React.createElement(
-	          "div",
+	          'p',
 	          null,
-	          React.createElement("iframe", { className: "video", src: "https://www.youtube.com/embed/dWKZd7LvBIE?controls=1" })
+	          ' The Playlist are three great players, playing great songs! Fronted by David McKendrick, these guys have been taking the industry by storm with the indie, pop, rock medleys and high energy sets. Don\'t be fooled, even though there is only three of them, they sound massive and they\'re accompanied on a few of the big floor fillers with backing tracks. You really need to see these guys live and meet them to get what they do. So get your tickets or book your space to their next live gig!  '
+	        ),
+	        React.createElement(
+	          'div',
+	          null,
+	          React.createElement('iframe', { className: 'video', src: 'https://www.youtube.com/embed/dWKZd7LvBIE?controls=1' })
 	        )
 	      );
 	    }
