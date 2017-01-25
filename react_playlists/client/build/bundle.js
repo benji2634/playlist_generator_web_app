@@ -25311,6 +25311,9 @@
 	
 	var React = __webpack_require__(1);
 	
+	var _require = __webpack_require__(160),
+	    Link = _require.Link;
+	
 	var SongSet = function SongSet(props) {
 	  return React.createElement(
 	    'div',
@@ -25323,6 +25326,11 @@
 	        'h3',
 	        { className: 'song-name' },
 	        props.name
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: '/gigs', className: 'songs-link' },
+	        'Randomise set list...'
 	      )
 	    )
 	  );
@@ -25419,6 +25427,7 @@
 	    browserHistory = Router.browserHistory;
 	
 	var Song = __webpack_require__(218);
+	// const shuffleArray = require('../functions/randomiser.js')
 	
 	function shuffleArray(array) {
 	  var i = array.length - 1;

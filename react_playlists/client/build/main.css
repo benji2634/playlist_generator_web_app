@@ -53,8 +53,8 @@ h1, h2, h4 {
 .songs-link, button{
   margin-top: 15px;
   padding: 10px 40px;
-  background-color: crimson;
-  color: #fafafa;
+  background-color: cyan;
+  color: black;
   border-color: transparent;
   display: inline-block;
   text-decoration: none;

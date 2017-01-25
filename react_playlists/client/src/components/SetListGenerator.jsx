@@ -2,6 +2,7 @@ const React = require('react')
 const Router = require('react-router')
 const { Link, browserHistory } = Router
 const Song = require('./Song')
+// const shuffleArray = require('../functions/randomiser.js')
 
 function shuffleArray(array) {
   let i = array.length - 1
