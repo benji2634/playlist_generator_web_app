@@ -44,6 +44,10 @@ h1, h2, h4 {
   background-image: url(images/logo.jpg);
   background-size: 100% 240px;
   background-repeat: no-repeat;
+  position: fixed;
+  margin: 15% auto; /* Will not center vertically and won't work in IE6/7. */
+  left: 0;
+  right: 0;
 }
 
 .songs-link, button{
