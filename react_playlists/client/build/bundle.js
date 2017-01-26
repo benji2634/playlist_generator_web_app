@@ -59,8 +59,8 @@
 	var SongList = __webpack_require__(217);
 	var ArtistList = __webpack_require__(219);
 	var SetList = __webpack_require__(221);
-	var SetListGenerator = __webpack_require__(224);
-	var About = __webpack_require__(223);
+	var SetListGenerator = __webpack_require__(223);
+	var About = __webpack_require__(224);
 	
 	var App = React.createClass({
 	  displayName: 'App',
@@ -25352,73 +25352,6 @@
 
 	'use strict';
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var React = __webpack_require__(1);
-	
-	var _require = __webpack_require__(160),
-	    Link = _require.Link;
-	
-	var About = function (_React$Component) {
-	  _inherits(About, _React$Component);
-	
-	  function About() {
-	    _classCallCheck(this, About);
-	
-	    return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).apply(this, arguments));
-	  }
-	
-	  _createClass(About, [{
-	    key: 'render',
-	    value: function render() {
-	      return React.createElement(
-	        'div',
-	        { className: 'about' },
-	        React.createElement(
-	          'nav',
-	          null,
-	          React.createElement(
-	            Link,
-	            { to: '/', className: 'title' },
-	            'The Playlist'
-	          )
-	        ),
-	        React.createElement(
-	          'h4',
-	          null,
-	          ' About '
-	        ),
-	        React.createElement(
-	          'p',
-	          null,
-	          ' The Playlist are three great players, playing great songs! Fronted by David McKendrick, these guys have been taking the industry by storm with the indie, pop, rock medleys and high energy sets. Don\'t be fooled, even though there is only three of them, they sound massive and they\'re accompanied on a few of the big floor fillers with backing tracks. You really need to see these guys live and meet them to get what they do. So get your tickets or book your space to their next live gig!  '
-	        ),
-	        React.createElement(
-	          'div',
-	          null,
-	          React.createElement('iframe', { className: 'video', src: 'https://www.youtube.com/embed/dWKZd7LvBIE?controls=1' })
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return About;
-	}(React.Component);
-	
-	module.exports = About;
-
-/***/ },
-/* 224 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
 	var React = __webpack_require__(1);
@@ -25492,6 +25425,73 @@
 	});
 	
 	module.exports = SetListGenerator;
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var React = __webpack_require__(1);
+	
+	var _require = __webpack_require__(160),
+	    Link = _require.Link;
+	
+	var About = function (_React$Component) {
+	  _inherits(About, _React$Component);
+	
+	  function About() {
+	    _classCallCheck(this, About);
+	
+	    return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).apply(this, arguments));
+	  }
+	
+	  _createClass(About, [{
+	    key: 'render',
+	    value: function render() {
+	      return React.createElement(
+	        'div',
+	        { className: 'about' },
+	        React.createElement(
+	          'nav',
+	          null,
+	          React.createElement(
+	            Link,
+	            { to: '/', className: 'title' },
+	            'The Playlist'
+	          )
+	        ),
+	        React.createElement(
+	          'h4',
+	          null,
+	          ' About '
+	        ),
+	        React.createElement(
+	          'p',
+	          null,
+	          ' The Playlist are three great players, playing great songs! Fronted by David McKendrick, these guys have been taking the industry by storm with the indie, pop, rock medleys and high energy sets. Don\'t be fooled, even though there is only three of them, they sound massive and they\'re accompanied on a few of the big floor fillers with backing tracks. You really need to see these guys live and meet them to get what they do. So get your tickets or book your space to their next live gig!  '
+	        ),
+	        React.createElement(
+	          'div',
+	          null,
+	          React.createElement('iframe', { className: 'video', src: 'https://www.youtube.com/embed/dWKZd7LvBIE?controls=1' })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return About;
+	}(React.Component);
+	
+	module.exports = About;
 
 /***/ }
 /******/ ]);
